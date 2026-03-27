@@ -292,8 +292,8 @@ body {
 
 .banner {
   position: relative;
-  background-image: url("https://github.com/hexschool/js-training/blob/main/%E7%AC%AC%E4%B9%9D%E9%80%B1%E4%B8%BB%E7%B7%9A%E4%BB%BB%E5%8B%99%E5%9C%96%E5%BA%AB/3ewLAKn.png?raw=true");
-  background-position: center center;
+  background-image: url("/assets/inside-weather-2EUdAWQ3Uko.jpg");
+  background-position: center bottom;
   background-repeat: no-repeat;
   background-size: cover;
   min-height: 420px;
@@ -303,6 +303,7 @@ body {
 .banner-text {
   position: absolute;
   color: #ffffff;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
   font-size: 2rem;
   left: 50px;
   bottom: 50px;
