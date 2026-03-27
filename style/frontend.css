@@ -939,4 +939,10 @@ body {
   display: none;
 }
 
+.shopping_cart {
+  font-size: 60px;
+  margin: 0 auto 12px;
+  color: #7a7a7a;
+}
+
 /*# sourceMappingURL=all.css.map */
