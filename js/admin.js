@@ -15,12 +15,17 @@ const discardAllBtn = document.querySelector(".discardAllBtn");
 const chartBtn = document.querySelector(".chart-space-btn");
 const chartContent = document.querySelector(".chartContent");
 const cartLoadingText = document.querySelector(".cartLoadingText");
+const chartTitle = document.querySelector(".chart-title");
+
+let currentOrders = [];
+let currentChartType = "product";
 
 //初始化：
 apiGetOrder();
 
 //「渲染」訂單列表 & 圖表渲染
 function renderOrders(orders) {
+  currentOrders = orders;
   let orderList = "";
   // 遍歷所有消費者送出的訂單
   orders.forEach(function (item, index) {
@@ -63,21 +68,15 @@ function renderOrders(orders) {
   orderPageTable.innerHTML = orderList;
   // 如果沒有訂單，顯示「沒有訂單」
   noRenderPie(orders);
+  if (orders.length === 0) {
+    return;
+  }
   if (orders.length !== 0) {
     discardAllBtn.classList.remove("disabled");
   } // 啟用「刪除全部按鈕」
   //渲染、切換圖表功能：
-  renderCategoryPie(orders);
+  renderCurrentPie();
   cartLoadingText.style.display = "none"; //隱藏文字「圖表載入中....」
-  let isAcart = false; //判斷要用哪個圖表
-  chartBtn.addEventListener("click", function () {
-    if (isAcart) {
-      renderCategoryPie(orders);
-    } else {
-      renderProductPie(orders);
-    }
-    isAcart = !isAcart;
-  });
 }
 
 // 如果沒有訂單，顯示「沒有訂單」
@@ -87,6 +86,16 @@ function noRenderPie(orders) {
     discardAllBtn.classList.add("disabled"); // 禁用「刪除全部按鈕」
     return;
   }
+}
+
+function renderCurrentPie() {
+  if (currentChartType === "product") {
+    renderProductPie(currentOrders);
+    chartTitle.textContent = "全品項營收比重";
+    return;
+  }
+  renderCategoryPie(currentOrders);
+  chartTitle.textContent = "分類品項營收比重";
 }
 
 //api 取得訂單
@@ -189,7 +198,11 @@ orderPageTable.addEventListener("click", function (event) {
   }
   //修改訂單按鈕觸發之後要執行的：
   if (event.target.textContent === "已處理") {
-    alert("訂單已不可再修改！");
+    // alert("訂單已不可再修改！");
+    Toast.fire({
+      icon: "error",
+      title: "訂單已不可再修改！",
+    });
   }
   if (event.target.textContent === "未處理") {
     adjOrderID = event.target.getAttribute("data-id");
@@ -204,6 +217,14 @@ discardAllBtn.addEventListener("click", function (event) {
   if (event.target.textContent === "清除全部訂單") {
     deleteAll();
   }
+});
+
+chartBtn.addEventListener("click", function () {
+  if (currentOrders.length === 0) {
+    return;
+  }
+  currentChartType = currentChartType === "product" ? "category" : "product";
+  renderCurrentPie();
 });
 
 //製作（品項分類）圓餅圖的 columns ＆ 丟入 c3 產生器
