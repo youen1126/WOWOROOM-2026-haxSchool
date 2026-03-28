@@ -1,0 +1,26 @@
+{
+  "name": "woworoom",
+  "version": "1.0.0",
+  "description": "- [前台Demo](https://youen1126.github.io/WOWOROOM-2026-haxSchool/) - [後台Demo](https://youen1126.github.io/WOWOROOM-2026-haxSchool/admin.html)",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "format": "prettier . --write",
+    "check-format": "prettier . --check"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/youen1126/WOWOROOM-2026-haxSchool.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/youen1126/WOWOROOM-2026-haxSchool/issues"
+  },
+  "homepage": "https://github.com/youen1126/WOWOROOM-2026-haxSchool#readme",
+  "devDependencies": {
+    "prettier": "^3.8.1"
+  }
+}
