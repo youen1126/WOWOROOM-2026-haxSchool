@@ -1,23 +1,3 @@
-.banner {
-  position: relative;
-  background-image: url("/assets/inside-weather-2EUdAWQ3Uko.jpg");
-  background-position: center bottom;
-  background-repeat: no-repeat;
-  background-size: cover;
-  min-height: 420px;
-  margin-bottom: 60px;
-}
-
-.banner-text {
-  position: absolute;
-  color: #ffffff;
-  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
-  font-size: 2rem;
-  left: 50px;
-  bottom: 50px;
-  font-weight: normal;
-}
-
 .section-title {
   text-align: center;
   font-size: 1.75rem;

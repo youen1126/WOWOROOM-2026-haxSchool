@@ -23,13 +23,12 @@ body {
 }
 
 .wrap {
-  max-width: 1110px;
+  max-width: 1000px;
   margin: 0 auto;
 }
 
 .topBar {
   border-bottom: 30px solid #000000;
-  margin-bottom: 30px;
 }
 
 .topBar .wrap {
@@ -43,8 +42,8 @@ body {
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  -ms-flex-wrap: wrap;
-  flex-wrap: wrap;
+  /* -ms-flex-wrap: wrap;
+  flex-wrap: wrap; */
 }
 
 @media (max-width: 1110px) {
@@ -57,7 +56,7 @@ body {
   display: block;
   text-decoration: none;
   color: #000000;
-  font-size: 1.25rem;
+  font-size: 20px;
 }
 
 .topBar a:hover {
@@ -144,7 +143,7 @@ body {
 }
 
 .logo {
-  padding: 20px 0;
+  /* padding: 20px 0; */
   font-size: 1.5rem;
 }
 
