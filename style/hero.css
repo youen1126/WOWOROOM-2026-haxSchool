@@ -23,3 +23,14 @@
   font-weight: normal;
   z-index: 2;
 }
+
+/* 手機版 */
+@media (max-width: 767px) {
+  .hero-content {
+    left: 20px;
+    right: 20px;
+    bottom: 24px;
+    font-size: 1.2rem;
+    line-height: 1.4;
+  }
+}
