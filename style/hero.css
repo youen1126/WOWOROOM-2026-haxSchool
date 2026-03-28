@@ -1,0 +1,34 @@
+.hero {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.hero-video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.hero-content {
+  position: absolute;
+  color: #ffffff;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
+  font-size: 2rem;
+  left: 50px;
+  bottom: 50px;
+  font-weight: normal;
+  z-index: 2;
+}
+
+.hero-btn {
+  display: inline-block;
+  margin-top: 16px;
+  padding: 10px 20px;
+  background: rgba(0, 0, 0, 0.6);
+  color: white;
+  text-decoration: none;
+  border-radius: 6px;
+}
