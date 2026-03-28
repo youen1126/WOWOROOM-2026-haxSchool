@@ -92,10 +92,12 @@ function renderCurrentPie() {
   if (currentChartType === "product") {
     renderProductPie(currentOrders);
     chartTitle.textContent = "全品項營收比重";
+    chartBtn.textContent = "切換為分類";
     return;
   }
   renderCategoryPie(currentOrders);
   chartTitle.textContent = "分類品項營收比重";
+  chartBtn.textContent = "切換為全品項";
 }
 
 //api 取得訂單
